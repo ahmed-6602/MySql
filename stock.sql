@@ -26,6 +26,8 @@
 **Query #1**
 
     -- Scenario: The operations team wants to know how much stock sits in each warehouse
+    -- For each warehouse, what is the total number of units?
+    
     
     select *
     from inventory_1;
@@ -56,6 +58,20 @@
 | 1            | lig | ABC2      | 90         |
 | 1            | qng | ABC3      | 5          |
 | 1            | pth | ABC4      | 46         |
+
+---
+**Query #3**
+
+    select warehouse,sum(units)
+    from inventory_1
+    group by warehouse;
+
+| warehouse | sum(units) |
+| --------- | ---------- |
+| ABC1      | 14         |
+| ABC2      | 106        |
+| ABC3      | 5          |
+| ABC4      | 46         |
 
 ---
 
