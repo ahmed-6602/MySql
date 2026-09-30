@@ -74,5 +74,22 @@
 | ABC4      | 46         |
 
 ---
+**Query #4**
+
+    -- Scenario: Management wants to know product variety per location. Table: inventory_1 (same as Q1) Question: For each warehouse, how many distinct SKUs are present?
+    
+    select distinct warehouse,sku
+    from inventory_1;
+
+| warehouse | sku |
+| --------- | --- |
+| ABC1      | xyz |
+| ABC1      | def |
+| ABC2      | ine |
+| ABC2      | lig |
+| ABC3      | qng |
+| ABC4      | pth |
+
+---
 
 [View on DB Fiddle](https://www.db-fiddle.com/)
