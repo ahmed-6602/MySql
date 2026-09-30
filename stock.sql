@@ -29,6 +29,8 @@
     -- For each warehouse, what is the total number of units?
     
     
+    
+    
     select *
     from inventory_1;
 
@@ -78,17 +80,16 @@
 
     -- Scenario: Management wants to know product variety per location. Table: inventory_1 (same as Q1) Question: For each warehouse, how many distinct SKUs are present?
     
-    select distinct warehouse,sku
-    from inventory_1;
+    select  warehouse, count(DISTINCT sku)
+    from inventory_1
+    group by warehouse;
 
-| warehouse | sku |
-| --------- | --- |
-| ABC1      | xyz |
-| ABC1      | def |
-| ABC2      | ine |
-| ABC2      | lig |
-| ABC3      | qng |
-| ABC4      | pth |
+| warehouse | count(DISTINCT sku) |
+| --------- | ------------------- |
+| ABC1      | 2                   |
+| ABC2      | 2                   |
+| ABC3      | 1                   |
+| ABC4      | 1                   |
 
 ---
 
